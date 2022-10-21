@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="prism.css">
+  <script src="prism.js"></script>
+  <title>Python Assignment-by Amrit Panta</title>
+</head>
+
+<body>
+  <header>
+    <a href="/">Python Assignment-by Amrit Panta</a>
+    <div class="set">
+      <a href="#seta">Set-A</a>
+      <a href="#setb" class="set">Set-B</a>
+    </div>
+  </header>
+  <div id="seta">
+  <h1>Python Assignment Set-A</h1>
+<div  class="container">
+
+    <div class="task">
+      <h3>1.WAP To Reverse A String</h3>
+      <pre class='language-python'>
+<code>
+'''method-1'''
+def reverse(sen):
+    reverse_string=''
+    for i in sen:
+        reverse_string=i+reverse_string
+    return reverse_string
+sen=input('Enter Any String \n -> ')
+print(f'Reverse of {sen} is \n {reverse(sen)}')
+
+'''
+method-2
+print(sen[::-1])
+
+'''
+#output:
+'''
+Enter Any String 
+-> python language
+Reverse of python language is 
+egaugnal nohtyp
+'''</code>
+</pre>
+    </div>
+  <!-- task2 -->
+    <div class="task">
+      <h3>2.Swap two number without using third variable</h3>
+      <pre class='language-python'>
+<code>
+def swapTwoNumber(x,y):
+  x=x+y
+  y=x-y
+  x=x-y
+  return x,y
+
+num1=int(input('Enter num1 : -> '))
+num2=int(input('Enter num2 : -> '))
+print('Num1 and Num2 Before Swapping :')
+print(f'Num1={num1} and Num2={num2}')
+
+print('Num1 and Num2 After Swapping :')
+num1,num2=swapTwoNumber(num1,num2)
+print(f'Num1={num1} and Num2={num2}')
+
+
+'''
+you can simply swap two number 
+num1,num2=num2,num1
+'''
+#output
+'''
+Enter num1 : -> 59
+Enter num2 : -> 7
+Num1 and Num2 Before Swapping :
+Num1=59 and Num2=7
+Num1 and Num2 After Swapping :
+Num1=7 and Num2=59
+'''
+
+</code>
+</pre>
+    </div>
+  <!-- task3 -->
+    <div class="task">
+      <h3>3.WAP to count number of word in string'</h3>
+      <pre class='language-python'>
+<code>
+sentence='Nepal Is The Most Beautiful Country In The World.'
+# split a sentence into word 
+words=sentence.split(' ')
+# remove the duplicate word 
+unique_word=[]
+for word in words:
+    if word not in unique_word:
+        unique_word.append(word)
+print(f'Number of Unique word in String is {len(unique_word)}')
+
+# output 
+'''
+Number of Unique word in String is 8
+'''
+</code>
+</pre>
+    </div>
+  <!-- task2 -->
+    <div class="task">
+      <h3>4.WAP to check whether number is prime or not</h3>
+      <pre class='language-python'>
+<code>
+def checkPrime(number):
+  for i in range(2,number):
+      if number%i==0:
+          return False
+  return True
+
+
+number=int(input('Enter Number for checking prime or not -> '))
+result=checkPrime(number)
+if result:
+  print(f'{number} is Prime Number')
+else:
+  print(f'{number} is Not Prime Number')
+# output
+'''
+Enter Number for checking prime or not -> 77
+77 is Not Prime Number
+
+Enter Number for checking prime or not -> 19
+19 is Prime Number
+'''
+</code>
+</pre>
+    </div>
+    <div class="task">
+      <h3>5.WAP to find largest and smallest number in an array</h3>
+      <pre class='language-python'>
+<code>
+def max_and_min_value(array):
+  smallest=array[0]
+  largest=array[0]
+  for num in array:
+      if num&ltsmallest:
+          smallest=num
+      if num>largest:
+          largest=num
+  return largest,smallest
+
+array=[555,68,90,12,44,56,435]
+max,min=max_and_min_value(array)
+print(f'Largest Number in array={max}\nSmallest Number in array={min}')
+# output 
+'''
+Largest Number in array=555
+Smallest Number in array=12
+'''
+</code>
+</pre>
+    </div>
+
+    <div class="task">
+      <h3>6.WAP To find the sum of the digit in number</h3>
+      <pre class='language-python'>
+<code>
+number=int(input('Enter Any Number -> '))
+sum=0
+num=number
+while number!=0:
+    digit=number%10
+    sum+=digit
+    number=number//10
+print(f'\nSum of the digit of number {num} is {sum}')
+# output:
+'''
+Enter Any Number -> 567
+
+Sum of the digit of number 567 is 18
+'''
+
+
+</code>
+</pre>
+    </div>
+    <div class="task">
+      <h3>7.Given a string, return true if the first instance of 'x' in the string is immediately followed by another 'x'</h3>
+      <pre class='language-python'>
+<code>
+def doubleX(word):
+  for i in range(len(word)-1):
+      if word[i]+word[i+1]=='xx':
+          return True
+  return False
+print(doubleX('axxbb')) #True
+print(doubleX('axaxax')) #False
+print(doubleX('xxxx'))   #True
+print(doubleX('aabbxccdd')) #False 
+
+</code>
+</pre>
+    </div>
+    <div class="task">
+      <h3>8.the number 6 is a truly great number. 
+        Given two int values, a and b ,return true if either one is 6 or if their sum or diference is 6 </h3>
+      <pre class='language-python'>
+<code>
+def love(a,b):
+  if a==6 or b==6 or a+b==6 or a-b==6:
+      return True
+  return False
+
+  
+print(love(6,4)) #True
+print(love(4,6)) #True
+print(love(5,1)) #True
+print(love(1,5)) #True
+print(love(100,94)) #True
+print(love(10,4)) #True
+print(love(4,5)) #False
+
+</code>
+</pre>
+    </div>
+    
+
+</div>
+</div>
+<div id="setb">
+
+  <h1>Python Assignment Set-B</h1>
+  <div  class="container">
+  <div class="task">
+    <h3>1.WAP to sort an array</h3>
+    <pre class='language-python'>
+<code>
+def sortarray(myarray):
+  for i in range(len(myarray)):
+      for j in range(i+1,len(myarray)):
+          if myarray[i]>myarray[j]:
+              temp=myarray[i]
+              myarray[i]=myarray[j]
+              myarray[j]=temp
+  return myarray
+
+myarray=[45,555,7,9,0,2,3,5,100]
+print(sortarray(myarray))
+'''
+output:
+[0, 2, 3, 5, 7, 9, 45, 100, 555]
+'''
+</code>
+</pre>
+  </div>
+  <div class="task">
+    <h3>2.WAP to sum all elements in the array.
+      it should sum only the numbers which are greater than zero</h3>
+    <pre class='language-python'>
+<code>
+def sum(array):
+  sum=0
+  for num in array:
+      if num>0:
+          sum+=num
+  return sum
+myarray=[45,555,7,9,0,2,-3, -100,3,5,100]
+print(sum(myarray))
+'''
+output:
+726
+'''
+</code>
+</pre>
+  </div>
+  <div class="task">
+    <h3>3. WAP to count the character in the string</h3>
+    <pre class='language-python'>
+<code>
+def countCharacter(mystring):
+  count=0
+  for i in mystring:
+      count+=1
+  return count
+mystring=input('Enter any string -> ').replace(' ','')
+print(f'Total Character is {countCharacter(mystring)}')
+'''
+output:
+Enter any string -> python language
+Total Character is 14
+'''
+</code>
+</pre>
+  </div>
+  <div class="task">
+    <h3>4.WAP thet should take input from the user and it should accept input onlt if the number is between 0 and 100</h3>
+    <pre class='language-python'>
+      <pre>
+<code>
+
+num=int(input('Enter any Number\n'))
+while True:
+    if num>0 and num &lt100:
+        print(f'Your Number is {num}')
+        break
+    else:
+        num=int(input('Please enter again \n'))
+
+'''
+output:
+Enter any  number
+125
+please enter again
+-100
+please enter again
+50 
+Your number is 50
+'''
+
+</code>
+</pre>
+</pre>
+  </div>
+  <div class="task">
+    <h3>5.  WAP to find the first prime number in array</h3>
+    <pre class='language-python'>
+<code>
+# function to check whether number is prime or not 
+def isPrime(num):
+    for i in range(2,num):
+        if num%i==0:
+            return False
+    return True
+
+myarray=[100,21,33,19,2,4,7,4,5,9,11]
+# myarray=[4,6,8]
+
+for i in myarray:
+    if isPrime(i):
+        print(f'First Prime Number in array is {i}')
+        break
+else:
+    print('Not any prime number in array')
+'''
+output:
+First Prime Number in array is 19
+'''
+</code>
+</pre>
+  </div>
+  <div class="task">
+    <h3>6. WAP to find sum of the digit in number</h3>
+    <pre class='language-python'>
+<code>
+number=int(input('Enter Any Number -> '))
+sum=0
+num=number
+while number!=0:
+    digit=number%10
+    sum+=digit
+    number=number//10
+print(f'\nSum of the digit of number {num} is {sum}')
+'''
+output:
+Enter Any Number -> 987
+
+Sum of the digit of number 987 is 24
+
+'''
+</code>
+</pre>
+  </div>
+  <div class="task">
+    <h3>7.Given a string, return true if the first instance of 'x' in the string is immediately followed by another 'x'</h3>
+    <pre class='language-python'>
+<code>
+def doubleX(word):
+for i in range(len(word)-1):
+    if word[i]+word[i+1]=='xx':
+        return True
+return False
+print(doubleX('axxbb')) #True
+print(doubleX('axaxax')) #False
+print(doubleX('xxxx'))   #True
+print(doubleX('aabbxccdd')) #False 
+
+</code>
+</pre>
+  </div>
+  <div class="task">
+    <h3>8.Print the pattern
+      <pre>
+        #####
+        ####
+        ###
+        ##
+        #
+      </pre>
+    </h3>
+    <pre class='language-python'>
+<code>
+for i in range(5,0,-1):
+    for j in range(i,0,-1):
+        print('#',end='')
+    print()
+'''
+output:
+#####
+####
+###
+##
+#
+'''
+</code>
+</pre>
+  </div>
+ 
+</div>
+</div>
+
+</body>
+
+</html>
